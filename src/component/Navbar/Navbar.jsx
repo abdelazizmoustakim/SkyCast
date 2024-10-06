@@ -1,12 +1,6 @@
 import React from 'react';
 import DarkMode from './DarkMode';
-
-const MenuLinks = [
-    { id: 1, name: 'Home', link: '#home' },
-    { id: 4, name: 'Sign Up', link: '/#' },
-    { id: 5, name: 'Sign In', link: '/#' }
-];
-
+import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
     return (
         <nav className="w-full bg-transparent py-4 sticky top-0 z-50">
@@ -22,19 +16,7 @@ const Navbar = () => {
                         </a>
                     </div>
 
-                    {/* Menu Links */}
-                    <div className="hidden lg:flex items-center space-x-8">
-                        {MenuLinks.map((link) => (
-                            <a
-                                key={link.id}
-                                href={link.link}
-                                className="text-lg font-medium text-gray-600 hover:text-indigo-600 transition-colors duration-300"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </div>
-                    
+
                     {/* Search & Other Options */}
                     <div className="flex items-center space-x-4 ml-auto">
                         {/* Search Bar */}
@@ -69,6 +51,20 @@ const Navbar = () => {
                         >
                             Sign In
                         </a>
+                        <a
+                            href="/#"
+                            className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
+                        >
+                            Sign Up
+                        </a>
+                        {/* User Icon */}
+                        <a
+                            href="/#"
+                            className="flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
+                        >
+                            <FaRegUser className="text-lg" /> {/* Adjusted size */}
+                        </a>
+
                         {/* DarkMode Toggle */}
                         <DarkMode />
                     </div>
@@ -77,5 +73,4 @@ const Navbar = () => {
         </nav>
     );
 };
-
 export default Navbar;

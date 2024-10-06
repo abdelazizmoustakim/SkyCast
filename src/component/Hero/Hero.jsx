@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
 // City data array with names and image paths
 const citiesData = [
@@ -36,12 +37,13 @@ const citiesData = [
   },
   {
     name: "Québec",
-    image: "/src/assets/cities/quebec.jpeg",// Ensure this path is correct
+    image: "/src/assets/cities/quebec.jpeg", // Ensure this path is correct
   }
 ];
 
 const Hero = () => {
   const [weatherData, setWeatherData] = useState([]);
+  const [favorites, setFavorites] = useState(new Set()); // Track favorite cities
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -70,6 +72,18 @@ const Hero = () => {
     fetchWeatherData();
   }, []);
 
+  const toggleFavorite = (cityName) => {
+    setFavorites((prevFavorites) => {
+      const newFavorites = new Set(prevFavorites);
+      if (newFavorites.has(cityName)) {
+        newFavorites.delete(cityName); // Remove from favorites
+      } else {
+        newFavorites.add(cityName); // Add to favorites
+      }
+      return newFavorites;
+    });
+  };
+
   return (
     <div className="container mx-auto p-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -82,7 +96,7 @@ const Hero = () => {
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
               >
                 {/* Display City Image */}
                 {cityInfo?.image && (
@@ -107,6 +121,18 @@ const Hero = () => {
                     : "N/A"}
                   °C
                 </p>
+
+                {/* Favorite Button positioned at the bottom right */}
+                <button
+                  onClick={() => toggleFavorite(cityWeather.name)}
+                  className="absolute bottom-4 right-4 focus:outline-none"
+                >
+                  {favorites.has(cityWeather.name) ? (
+                    <MdFavorite className="text-red-500" size={32} />
+                  ) : (
+                    <MdFavoriteBorder className="text-gray-400" size={32} />
+                  )}
+                </button>
               </div>
             );
           })}
