@@ -4,19 +4,18 @@ import { TiWeatherCloudy } from "react-icons/ti";
 import { MdFavoriteBorder } from "react-icons/md";
 import { GrContact } from "react-icons/gr";
 import { RiHome2Line } from "react-icons/ri";
-
 // Update MenuLinks to include icons
 const MenuLinks = [
-    { id: 1, name: 'Home', link: '#home', icon: <RiHome2Line className="inline-block mr-2 text-xl" /> },
-    { id: 2, name: 'Weather', link: '#weather', icon: <TiWeatherCloudy className="inline-block mr-2 text-xl" /> },
-    { id: 3, name: 'Favorites', link: '#favorites', icon: <MdFavoriteBorder className="inline-block mr-2 text-xl" /> },
-    { id: 4, name: 'Profile', link: '#profile', icon: <FaRegUser className="inline-block mr-2 text-xl" /> },
-    { id: 5, name: 'Contact', link: '#contact', icon: <GrContact className="inline-block mr-2 text-xl" /> }
+    { id: 1, name: 'Home', link: '/', icon: <RiHome2Line className="inline-block mr-2 text-xl" /> },
+    { id: 2, name: 'Weather', link: '/weather', icon: <TiWeatherCloudy className="inline-block mr-2 text-xl" /> },
+    { id: 3, name: 'Favorites', link: '/favorites', icon: <MdFavoriteBorder className="inline-block mr-2 text-xl" /> },
+    { id: 4, name: 'Profile', link: '/profile', icon: <FaRegUser className="inline-block mr-2 text-xl" /> },
+    { id: 5, name: 'Contact', link: '/contact', icon: <GrContact className="inline-block mr-2 text-xl" /> }
 ];
 
 const Sidebar = () => {
     return (
-        <aside className="w-64 h-[calc(100vh-4rem)] bg-white dark:bg-gray-900 dark:text-white fixed duration-200 relative z-40">
+        <aside className="w-64 h-[calc(100vh-4rem)] bg-white dark:bg-gray-900 dark:text-white sticky duration-200 relative z-40">
             <nav className="mt-6">
                 <ul className="space-y-7"> {/* Increased space between links */}
                     {MenuLinks.map((link) => (

@@ -96,7 +96,7 @@ const Hero = () => {
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 relative"
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform transition-transform duration-300 relative"
               >
                 {/* Display City Image */}
                 {cityInfo?.image && (

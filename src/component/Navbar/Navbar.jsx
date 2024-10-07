@@ -3,13 +3,13 @@ import DarkMode from './DarkMode';
 import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
     return (
-        <nav className="w-full bg-transparent py-4 sticky top-0 z-50">
+        <nav className="w-full bg-transparent py-4 top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="flex justify-between items-center w-full">
                     {/* Logo Section */}
                     <div className="flex items-center space-x-4 mr-10">
                         <a
-                            href="#"
+                            href="/"
                             className="text-3xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors duration-300 mr-50"
                         >
                             SKYCAST
@@ -46,20 +46,20 @@ const Navbar = () => {
 
                         {/* Sign In Button */}
                         <a
-                            href="/#"
+                            href="/signin"
                             className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
                         >
                             Sign In
                         </a>
                         <a
-                            href="/#"
+                            href="/signup"
                             className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
                         >
                             Sign Up
                         </a>
                         {/* User Icon */}
                         <a
-                            href="/#"
+                            href="/profile"
                             className="flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors duration-300"
                         >
                             <FaRegUser className="text-lg" /> {/* Adjusted size */}
