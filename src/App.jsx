@@ -10,11 +10,9 @@ function App() {
     <Router>
       <div className='bg-white dark:bg-gray-900 dark:text-white duration-200'>
         <Navbar />
-
         {/* Flexbox container to align Sidebar and content */}
         <div className='flex'>
           <Sidebar />
-
           {/* Main content area - renders based on the route */}
           <div className="flex-grow">
             <Routes>
@@ -27,11 +25,8 @@ function App() {
           </div>
         </div>
         <Footer />
-      </div>
-      
+      </div>     
     </Router>
   );
 }
-
 export default App;
-

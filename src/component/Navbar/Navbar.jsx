@@ -1,6 +1,7 @@
 import React from 'react';
 import DarkMode from './DarkMode';
 import { FaRegUser } from "react-icons/fa";
+
 const Navbar = () => {
     return (
         <nav className="w-full bg-transparent py-4 top-0 z-50">
@@ -15,8 +16,6 @@ const Navbar = () => {
                             SKYCAST
                         </a>
                     </div>
-
-
                     {/* Search & Other Options */}
                     <div className="flex items-center space-x-4 ml-auto">
                         {/* Search Bar */}
